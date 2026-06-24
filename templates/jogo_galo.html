@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}Jogo do Galo{% endblock %}
+
+{% block content %}
+<section class="game-page">
+  <h1>⭕ JOGO DO GALO ❌</h1>
+  <p class="game-page__intro">Alinha 3 símbolos em linha, coluna ou diagonal para venceres!</p>
+
+  <div class="game-toolbar">
+    <button class="btn btn--outline" id="modePvp">👫 2 Jogadores</button>
+    <button class="btn btn--outline" id="modeCpu">🤖 Contra o computador</button>
+    <button class="btn btn--green" id="restartBtn">🔄 Reiniciar</button>
+  </div>
+
+  <p class="game-status" id="status">Vez do jogador ❌</p>
+
+  <div class="board-galo" id="board">
+    {% for i in range(9) %}
+    <button type="button" class="cell-galo" data-index="{{ i }}" aria-label="Casa {{ i + 1 }}"></button>
+    {% endfor %}
+  </div>
+
+  <a class="back-link" href="{{ url_for('jogos') }}">← Voltar aos jogos</a>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/galo.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+{% block title %}Início{% endblock %}
+
+{% block content %}
+
+<section class="hero">
+  <span class="badge-tag">DIVERSÃO SEM LIMITES! ✨</span>
+
+  <div class="hero__logo">
+    <div class="logo-line logo-line--1">
+      <span class="logo-letter logo-letter--grass">F</span><span class="logo-letter logo-letter--grass">U</span><span class="logo-letter logo-letter--grass">N</span><span class="logo-letter logo-letter--grass">T</span><span class="logo-letter logo-letter--grass">A</span><span class="logo-letter logo-letter--grass">S</span><span class="logo-letter logo-letter--grass">T</span><span class="logo-letter logo-letter--grass">I</span><span class="logo-letter logo-letter--grass">C</span>
+    </div>
+    <div class="logo-line logo-line--2">
+      <span class="logo-letter logo-letter--blue">W</span><span class="logo-ball">🏀</span><span class="logo-letter logo-letter--red">R</span><span class="logo-letter logo-letter--yellow">L</span><span class="logo-letter logo-letter--green">D</span>
+    </div>
+  </div>
+
+  <div class="hero__banners">
+    <p class="banner banner--navy">JOGA. DIVERTE-TE. PARTILHA.</p>
+    <p class="banner banner--green">PARA TODAS AS IDADES!</p>
+  </div>
+
+  <div class="hero__panel">
+    <h2>A TUA NOVA <span class="text-green">EXPERIÊNCIA</span><br>DE JOGO!</h2>
+    <p>A Funtastic World é muito mais do que um salão de jogos. É um lugar onde a diversão, a amizade e a competição saudável se encontram!</p>
+    <span class="hero__controller" aria-hidden="true">🎮</span>
+  </div>
+</section>
+
+<section class="gallery">
+  <div class="polaroid polaroid--1">
+    <div class="polaroid__img polaroid__img--arcade">🕹️</div>
+    <p>Sala de arcade</p>
+  </div>
+  <div class="polaroid polaroid--2">
+    <div class="polaroid__img polaroid__img--console">🎮</div>
+    <p>Consolas e desporto</p>
+  </div>
+  <div class="polaroid polaroid--3">
+    <div class="polaroid__img polaroid__img--board">🎲</div>
+    <p>Jogos de tabuleiro</p>
+  </div>
+</section>
+
+<section class="features">
+  <div class="features__list">
+    <h2 class="features__title">O QUE ENCONTRAS AQUI?</h2>
+
+    <div class="feature-card">
+      <span class="feature-icon feature-icon--green">🎮</span>
+      <div>
+        <h3>Jogos para todos</h3>
+        <p>Arcade, consolas, desporto, tabuleiro e muito mais!</p>
+      </div>
+    </div>
+
+    <div class="feature-card">
+      <span class="feature-icon feature-icon--red">👨‍👩‍👧‍👦</span>
+      <div>
+        <h3>Espaço para amigos e família</h3>
+        <p>Diversão garantida para todas as idades.</p>
+      </div>
+    </div>
+
+    <div class="feature-card">
+      <span class="feature-icon feature-icon--yellow">🏆</span>
+      <div>
+        <h3>Eventos e torneios</h3>
+        <p>Participa, desafia e ganha prémios incríveis!</p>
+      </div>
+    </div>
+
+    <div class="feature-card">
+      <span class="feature-icon feature-icon--blue">🎁</span>
+      <div>
+        <h3>Promoções e novidades</h3>
+        <p>Novos jogos, ofertas especiais e muito mais!</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="features__side">
+    <p class="features__epic">VEM<br><span class="text-green">VIVER</span><br>MOMENTOS<br><span class="text-red">ÉPICOS!</span></p>
+    <div class="kids-badge">
+      <span>👍</span>
+      <p>CRIADO POR <span class="text-green">CRIANÇAS</span>, PENSADO PARA <span class="text-blue">TODOS!</span></p>
+    </div>
+  </div>
+</section>
+
+<section class="play-cta">
+  <h2>JOGA AGORA NO SITE! 🌟</h2>
+  <p>Experimenta os nossos joguinhos enquanto planeias a tua visita à Funtastic World.</p>
+  <div class="play-cta__grid">
+    <a class="play-card" href="{{ url_for('jogo_galo') }}">
+      <span class="play-card__icon">⭕</span>
+      <span class="play-card__name">Jogo do Galo</span>
+    </a>
+    <a class="play-card" href="{{ url_for('jogo_damas') }}">
+      <span class="play-card__icon">⚪</span>
+      <span class="play-card__name">Damas</span>
+    </a>
+    <a class="play-card" href="{{ url_for('jogo_sudoku') }}">
+      <span class="play-card__icon">🔢</span>
+      <span class="play-card__name">Sudoku</span>
+    </a>
+    <a class="play-card" href="{{ url_for('jogo_xadrez') }}">
+      <span class="play-card__icon">♟️</span>
+      <span class="play-card__name">Xadrez</span>
+    </a>
+  </div>
+  <a class="btn btn--big" href="{{ url_for('jogos') }}">Ver todos os jogos</a>
+</section>
+
+{% endblock %}

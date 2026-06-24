@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block title %}Jogos{% endblock %}
+
+{% block content %}
+<section class="page-header">
+  <h1>OS NOSSOS <span class="text-green">JOGOS</span> 🎲</h1>
+  <p>Escolhe um jogo e diverte-te! Podes jogar sozinho ou com um amigo no mesmo computador.</p>
+</section>
+
+<section class="play-cta play-cta--page">
+  <div class="play-cta__grid">
+    <a class="play-card play-card--big" href="{{ url_for('jogo_galo') }}">
+      <span class="play-card__icon">⭕</span>
+      <span class="play-card__name">Jogo do Galo</span>
+      <span class="play-card__desc">2 jogadores ou contra o computador</span>
+    </a>
+    <a class="play-card play-card--big" href="{{ url_for('jogo_damas') }}">
+      <span class="play-card__icon">⚪</span>
+      <span class="play-card__name">Damas</span>
+      <span class="play-card__desc">O clássico jogo de tabuleiro, 2 jogadores</span>
+    </a>
+    <a class="play-card play-card--big" href="{{ url_for('jogo_sudoku') }}">
+      <span class="play-card__icon">🔢</span>
+      <span class="play-card__name">Sudoku</span>
+      <span class="play-card__desc">Preenche a grelha com números de 1 a 9</span>
+    </a>
+    <a class="play-card play-card--big" href="{{ url_for('jogo_xadrez') }}">
+      <span class="play-card__icon">♟️</span>
+      <span class="play-card__name">Xadrez</span>
+      <span class="play-card__desc">Versão simplificada, fácil de aprender</span>
+    </a>
+  </div>
+</section>
+{% endblock %}

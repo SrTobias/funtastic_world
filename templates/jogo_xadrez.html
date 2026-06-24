@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}Xadrez{% endblock %}
+
+{% block content %}
+<section class="game-page">
+  <h1>♟️ XADREZ</h1>
+  <p class="game-page__intro">
+    Versão simplificada para te divertires: move as peças como no xadrez normal e
+    <strong>captura o rei adversário para ganhar</strong> — sem roque, sem "en passant" e sem regras complicadas!
+  </p>
+
+  <div class="game-toolbar">
+    <button class="btn btn--green" id="restartBtn">🔄 Reiniciar Jogo</button>
+  </div>
+
+  <p class="game-status" id="status">Vez do jogador 🔴 Vermelho</p>
+
+  <div class="board-8" id="board"></div>
+
+  <a class="back-link" href="{{ url_for('jogos') }}">← Voltar aos jogos</a>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/xadrez.js') }}"></script>
+{% endblock %}

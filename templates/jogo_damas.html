@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Damas{% endblock %}
+
+{% block content %}
+<section class="game-page">
+  <h1>⚪ DAMAS 🔴</h1>
+  <p class="game-page__intro">Move as tuas peças na diagonal e salta sobre as peças do adversário para as capturar. Quem chega à última linha vira Dama!</p>
+
+  <div class="game-toolbar">
+    <button class="btn btn--green" id="restartBtn">🔄 Reiniciar Jogo</button>
+  </div>
+
+  <p class="game-status" id="status">Vez do jogador 🔴 Vermelho</p>
+
+  <div class="board-8" id="board"></div>
+
+  <a class="back-link" href="{{ url_for('jogos') }}">← Voltar aos jogos</a>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/damas.js') }}"></script>
+{% endblock %}

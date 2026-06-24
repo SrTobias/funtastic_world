@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block title %}Sudoku{% endblock %}
+
+{% block content %}
+<section class="game-page">
+  <h1>🔢 SUDOKU</h1>
+  <p class="game-page__intro">Preenche a grelha com números de 1 a 9, sem repetir número em nenhuma linha, coluna ou quadrado 3x3!</p>
+
+  <div class="difficulty-row">
+    <a class="btn btn--outline {{ 'is-active' if dificuldade == 'facil' }}" href="{{ url_for('jogo_sudoku', dificuldade='facil') }}">😀 Fácil</a>
+    <a class="btn btn--outline {{ 'is-active' if dificuldade == 'medio' }}" href="{{ url_for('jogo_sudoku', dificuldade='medio') }}">🤔 Médio</a>
+  </div>
+
+  <div class="game-toolbar">
+    <a class="btn btn--green" href="{{ url_for('jogo_sudoku', dificuldade=dificuldade) }}">🔄 Nova Grelha</a>
+    <button class="btn btn--blue" id="checkBtn">✅ Verificar</button>
+    <button class="btn btn--outline" id="solveBtn">👀 Mostrar Solução</button>
+  </div>
+
+  <p class="game-status" id="status">Boa sorte! 🍀</p>
+
+  <div class="board-sudoku" id="board">
+    {% for row in range(9) %}
+      {% for col in range(9) %}
+        {% set value = puzzle[row][col] %}
+        <input
+          type="text"
+          inputmode="numeric"
+          maxlength="1"
+          data-row="{{ row }}"
+          data-col="{{ col }}"
+          class="{{ 'sudoku-row-3' if row % 3 == 2 else '' }}"
+          value="{{ value if value != 0 else '' }}"
+          {{ 'disabled' if value != 0 else '' }}
+        >
+      {% endfor %}
+    {% endfor %}
+  </div>
+
+  <script id="solutionData" type="application/json">{{ solucao | tojson }}</script>
+
+  <a class="back-link" href="{{ url_for('jogos') }}">← Voltar aos jogos</a>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/sudoku.js') }}"></script>
+{% endblock %}
